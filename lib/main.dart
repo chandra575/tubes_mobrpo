@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_tubes_galon/pages/chat_page.dart';
@@ -5,6 +7,7 @@ import 'package:flutter_tubes_galon/pages/history_page.dart';
 import 'package:flutter_tubes_galon/pages/home_page.dart';
 import 'package:flutter_tubes_galon/pages/order_page.dart';
 import 'package:flutter_tubes_galon/pages/search_page.dart';
+import 'package:flutter_tubes_galon/pages/splash_page.dart';
 import 'package:flutter_tubes_galon/theme.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -24,6 +27,16 @@ class _MyAppState extends State<MyApp> {
 
   PageController pageController = PageController();
   // This widget is the root of your application.
+
+  @override
+  void initState() {
+    super.initState();
+    Timer(
+        const Duration(seconds: 3),
+        () => Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => HomePage())));
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -34,58 +47,58 @@ class _MyAppState extends State<MyApp> {
         useMaterial3: true,
       ),
       home: Scaffold(
-        body: PageView(
-          controller: pageController,
-          children: [
-            HomePage(),
-            ChatPage(),
-            SearchPage(),
-            OrderPage(),
-            HistoryPage()
-          ],
+        body: SafeArea(
+          child: PageView(
+            controller: pageController,
+            children: [
+              HomePage(),
+              ChatPage(),
+              SearchPage(),
+              OrderPage(),
+              HistoryPage()
+            ],
+          ),
         ),
         bottomNavigationBar: BottomNavigationBar(
-        iconSize: 20,
-        backgroundColor: Colors.black,
-        currentIndex: currIndex,
-
-        selectedItemColor: primaryColor,
-        unselectedItemColor: Colors.black,
-        onTap: (page) {
-          if (page != currIndex) {
-            setState(() {
-              currIndex = page;
-              pageController.animateToPage(page, duration: Duration(milliseconds: 500), curve: Curves.easeInOutCubic);
-            });
-          }
-        },
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: "Beranda",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
-            label: "Obrolan",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: "Cari",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.list_alt),
-            label: "Pesanan",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.history),
-            label: "Riwayat",
-          )
-        ],
+          iconSize: 20,
+          backgroundColor: Colors.black,
+          currentIndex: currIndex,
+          selectedItemColor: primaryColor,
+          unselectedItemColor: Colors.black,
+          onTap: (page) {
+            if (page != currIndex) {
+              setState(() {
+                currIndex = page;
+                pageController.animateToPage(page,
+                    duration: Duration(milliseconds: 500),
+                    curve: Curves.easeInOutCubic);
+              });
+            }
+          },
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: "Beranda",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.chat),
+              label: "Obrolan",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              label: "Cari",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.list_alt),
+              label: "Pesanan",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.history),
+              label: "Riwayat",
+            )
+          ],
+        ),
       ),
-      ),
-      
-      
     );
   }
 }
-

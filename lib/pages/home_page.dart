@@ -15,179 +15,174 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-          child: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: ListView(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    Image.asset(
-                      "assets/img/profile.png",
-                      width: 70,
-                      height: 70,
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    Column(
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: ListView(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  Image.asset(
+                    "assets/img/profile.png",
+                    width: 70,
+                    height: 70,
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Selamat Datang",
+                        style: GoogleFonts.kumbhSans(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w600,
+                            color: greyColor),
+                      ),
+                      Text(
+                        "Ganjar Prabowo",
+                        style: GoogleFonts.kumbhSans(
+                            fontSize: 25,
+                            fontWeight: FontWeight.w700,
+                            color: primaryColor),
+                      )
+                    ],
+                  ),
+                ],
+              ),
+              Stack(
+                alignment: Alignment.topRight,
+                children: [
+                  const Icon(
+                    Icons.notifications,
+                    color: primaryColor,
+                    size: 40,
+                  ),
+                  Container(
+                    width: 15,
+                    height: 15,
+                    decoration: const BoxDecoration(
+                        color: redColor, shape: BoxShape.circle),
+                    child: Center(
+                        child: Text(
+                      "1",
+                      style: GoogleFonts.inter(
+                          fontSize: 9,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    )),
+                  )
+                ],
+              )
+            ],
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          Container(
+            padding: const EdgeInsets.all(15),
+            decoration: const BoxDecoration(
+                color: primaryColor,
+                borderRadius: BorderRadius.all(Radius.circular(15))),
+            child: Center(
+              child: Row(
+                children: [
+                  Container(
+                      padding: const EdgeInsets.all(15),
+                      decoration: const BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(20))),
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            "assets/img/wallet.png",
+                            width: 35,
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Saldo",
+                                style: GoogleFonts.boogaloo(
+                                    fontSize: 15, fontWeight: FontWeight.w700),
+                              ),
+                              Text(
+                                "Rp. 5.000",
+                                style: GoogleFonts.boogaloo(
+                                    fontSize: 15, fontWeight: FontWeight.w700),
+                              )
+                            ],
+                          )
+                        ],
+                      )),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Selamat Datang",
-                          style: GoogleFonts.kumbhSans(
+                          "Level 1",
+                          style: GoogleFonts.boogaloo(
                               fontSize: 15,
-                              fontWeight: FontWeight.w600,
-                              color: greyColor),
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white),
+                        ),
+                        Container(
+                          height: 10,
+                          width: 140,
+                          decoration: const BoxDecoration(
+                              color: Color(0xffF3EDED),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
                         ),
                         Text(
-                          "Ganjar Prabowo",
-                          style: GoogleFonts.kumbhSans(
-                              fontSize: 25,
+                          "0/200",
+                          style: GoogleFonts.boogaloo(
+                              fontSize: 15,
                               fontWeight: FontWeight.w700,
-                              color: primaryColor),
+                              color: Colors.white),
                         )
-                      ],
-                    ),
-                  ],
-                ),
-                Stack(
-                  alignment: Alignment.topRight,
-                  children: [
-                    const Icon(
-                      Icons.notifications,
-                      color: primaryColor,
-                      size: 40,
-                    ),
-                    Container(
-                      width: 15,
-                      height: 15,
-                      decoration: const BoxDecoration(
-                          color: redColor, shape: BoxShape.circle),
-                      child: Center(
-                          child: Text(
-                        "1",
-                        style: GoogleFonts.inter(
-                            fontSize: 9,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
-                      )),
-                    )
-                  ],
-                )
-              ],
+                      ])
+                ],
+              ),
             ),
-            const SizedBox(
-              height: 30,
-            ),
-            Container(
-              padding: const EdgeInsets.all(15),
-              decoration: const BoxDecoration(
+          ),
+          const SizedBox(
+            height: 40,
+          ),
+          ListItems(),
+          const SizedBox(
+            height: 20,
+          ),
+          GestureDetector(
+            onTap: () => {},
+            child: Container(
+              padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+              decoration: BoxDecoration(
+                  color: const Color(0xffE0F9FF),
+                  borderRadius: BorderRadius.circular(20)),
+              child: Text(
+                "Lihat Semua",
+                style: GoogleFonts.kumbhSans(
                   color: primaryColor,
-                  borderRadius: BorderRadius.all(Radius.circular(15))),
-              child: Center(
-                child: Row(
-                  children: [
-                    Container(
-                        padding: const EdgeInsets.all(15),
-                        decoration: const BoxDecoration(
-                            color: Colors.white,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20))),
-                        child: Row(
-                          children: [
-                            Image.asset(
-                              "assets/img/wallet.png",
-                              width: 35,
-                            ),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Saldo",
-                                  style: GoogleFonts.boogaloo(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w700),
-                                ),
-                                Text(
-                                  "Rp. 5.000",
-                                  style: GoogleFonts.boogaloo(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w700),
-                                )
-                              ],
-                            )
-                          ],
-                        )),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Level 1",
-                            style: GoogleFonts.boogaloo(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white),
-                          ),
-                          Container(
-                            height: 10,
-                            width: 140,
-                            decoration: const BoxDecoration(
-                                color: Color(0xffF3EDED),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(10))),
-                          ),
-                          Text(
-                            "0/200",
-                            style: GoogleFonts.boogaloo(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white),
-                          )
-                        ])
-                  ],
+                  fontSize: 15,
+                  fontWeight: FontWeight.w400,
                 ),
+                textAlign: TextAlign.center,
               ),
             ),
-            const SizedBox(
-              height: 40,
-            ),
-            ListItems(),
-            const SizedBox(
-              height: 20,
-            ),
-            GestureDetector(
-              onTap: () => {},
-              child: Container(
-                padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-                decoration: BoxDecoration(
-                    color: const Color(0xffE0F9FF),
-                    borderRadius: BorderRadius.circular(20)),
-                child: Text(
-                  "Lihat Semua",
-                  style: GoogleFonts.kumbhSans(
-                    color: primaryColor,
-                    fontSize: 15,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-          ],
-        ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+        ],
       ),
     );
   }
