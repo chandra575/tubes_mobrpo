@@ -4,7 +4,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_tubes_galon/data/list_galon.dart';
 import 'package:flutter_tubes_galon/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -16,8 +15,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
+    return SafeArea(
           child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: ListView(
@@ -190,40 +188,6 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
         ),
-      )),
-      bottomNavigationBar: GNav(
-        iconSize: 20,
-        tabMargin: EdgeInsets.only(right: 5),
-        padding: EdgeInsets.all(10),
-        tabBackgroundColor: primaryColor,
-        activeColor: Colors.white,
-        onTabChange: (index) {
-          setState(() {
-            currIndex = index;
-          });
-        },
-        tabs: const [
-          GButton(
-            icon: Icons.home,
-            text: "Beranda",
-          ),
-          GButton(
-            icon: Icons.chat,
-            text: "Obrolan",
-          ),
-          GButton(
-            icon: Icons.search,
-            text: "Cari",
-          ),
-          GButton(
-            icon: Icons.list_alt,
-            text: "Pesanan",
-          ),
-          GButton(
-            icon: Icons.history,
-            text: "Riwayat",
-          )
-        ],
       ),
     );
   }
