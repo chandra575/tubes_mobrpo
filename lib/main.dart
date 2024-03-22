@@ -1,15 +1,10 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_tubes_galon/pages/chat_page.dart';
 import 'package:flutter_tubes_galon/pages/history_page.dart';
 import 'package:flutter_tubes_galon/pages/home_page.dart';
 import 'package:flutter_tubes_galon/pages/order_page.dart';
 import 'package:flutter_tubes_galon/pages/search_page.dart';
-import 'package:flutter_tubes_galon/pages/splash_page.dart';
 import 'package:flutter_tubes_galon/theme.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,13 +25,10 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void initState() {
+    // TODO: implement initState
     super.initState();
-    Timer(
-        const Duration(seconds: 3),
-        () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => HomePage())));
+    
   }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
