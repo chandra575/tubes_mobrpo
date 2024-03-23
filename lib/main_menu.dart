@@ -6,6 +6,9 @@ import 'package:flutter_tubes_galon/features/common/screens/order/order.dart';
 import 'package:flutter_tubes_galon/features/common/screens/search/search.dart';
 import 'package:flutter_tubes_galon/utils/constants/colors.dart';
 import 'package:flutter_tubes_galon/utils/helpers/helper_functions.dart';
+import 'package:get/get.dart';
+import 'package:get/state_manager.dart';
+import 'package:iconsax/iconsax.dart';
 
 class MainMenu extends StatefulWidget {
   MainMenu({
@@ -21,59 +24,58 @@ class _MainMenuState extends State<MainMenu> {
 
   PageController pageController = PageController();
 
+  final mainMenuController = Get.put(MainMenuController());
+
   @override
   Widget build(BuildContext context) {
     final isDark = AppHelperFunctions.isDarkMode(context);
     return Scaffold(
-      body: PageView(
-        controller: pageController,
-        children: [
-          HomeScreen(),
-          ChatScreen(),
-          SearchScreen(),
-          OrderScreen(),
-          HistoryScreen()
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
+      body: Obx(
+          () => mainMenuController.screens[mainMenuController.currIndex.value]),
+      bottomNavigationBar: Obx(
+        () => BottomNavigationBar(
           iconSize: 20,
           backgroundColor: isDark ? AppColors.light : AppColors.dark,
-          currentIndex: currIndex,
+          currentIndex: mainMenuController.currIndex.value,
           unselectedItemColor: isDark ? AppColors.light : AppColors.dark,
           selectedItemColor: AppColors.primary,
-          onTap: (page) {
-            if (page != currIndex) {
-              setState(() {
-                currIndex = page;
-                pageController.animateToPage(page,
-                    duration: const Duration(milliseconds: 500),
-                    curve: Curves.easeInOutCubic);
-              });
-            }
-          },
+          onTap: (page) => mainMenuController.currIndex.value = page,
           items: const [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: Icon(Iconsax.home),
               label: "Beranda",
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.chat),
+              icon: Icon(Iconsax.message),
               label: "Obrolan",
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.search),
+              icon: Icon(Iconsax.search_normal),
               label: "Cari",
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.list_alt),
+              icon: Icon(Iconsax.receipt_1),
               label: "Pesanan",
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.history),
+              icon: Icon(Iconsax.clock),
               label: "Riwayat",
             )
           ],
         ),
+      ),
     );
   }
+}
+
+class MainMenuController extends GetxController {
+  final Rx<int> currIndex = 0.obs;
+
+  List<Widget> screens = [
+    HomeScreen(),
+    ChatScreen(),
+    SearchScreen(),
+    OrderScreen(),
+    HistoryScreen()
+  ];
 }
