@@ -10,12 +10,12 @@ import 'package:flutter_tubes_galon/utils/theme/widget_themes/text_theme.dart';
 
 import '../constants/colors.dart';
 
-class TAppTheme {
-  TAppTheme._();
+class AppTheme {
+  AppTheme._();
 
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
-    fontFamily: 'Poppins',
+    fontFamily: 'Kumbh Sans',
     disabledColor: AppColors.grey,
     brightness: Brightness.light,
     primaryColor: AppColors.primary,
@@ -32,7 +32,7 @@ class TAppTheme {
 
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
-    fontFamily: 'Poppins',
+    fontFamily: 'Kumbh Sans',
     disabledColor: AppColors.grey,
     brightness: Brightness.dark,
     primaryColor: AppColors.primary,

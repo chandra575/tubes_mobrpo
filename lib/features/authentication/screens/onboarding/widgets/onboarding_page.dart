@@ -13,7 +13,7 @@ class OnBoardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(AppSizes.defaultSpace),
+      padding: const EdgeInsets.all(AppSizes.defaultSpace*1.2),
       child: Column(
         children: [
           Image.asset(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tubes_galon/features/authentication/screens/login/login.dart';
+import 'package:flutter_tubes_galon/main_menu.dart';
 import 'package:get/get.dart';
 
 class OnboardingController extends GetxController {
@@ -22,7 +22,7 @@ class OnboardingController extends GetxController {
   void nextPage() {
     if (currentIndex.value == 2) {
       // Jump to another page
-      Get.offAll(const LoginScreen());
+      Get.offAll(MainMenu());
     } else {
       currentIndex.value++;
       pageController.jumpToPage(currentIndex.value);

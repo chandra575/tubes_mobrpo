@@ -1,16 +1,14 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_tubes_galon/data/list_galon.dart';
 import 'package:flutter_tubes_galon/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomePage extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeScreenState extends State<HomeScreen> {
   int currIndex = 0;
 
   @override
@@ -229,7 +227,7 @@ class _ListItemsState extends State<ListItems> {
                     color: primaryColor),
               ),
               Image.asset(
-                "assets/img/galon/aqua.png",
+                listGalon[index]['image'],
                 width: 100,
               ),
               Text(

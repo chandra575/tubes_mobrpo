@@ -91,7 +91,7 @@ class AppHelperFunctions {
   }
 
   static double screenWidth() {
-    return MediaQuery.of(Get.context!).size.width;
+    return MediaQuery.of(Get.context!).size.width; 
   }
 
   static String getFormattedDate(DateTime date, {String format = 'dd MMM yyyy'}) {
