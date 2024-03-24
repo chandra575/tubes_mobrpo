@@ -10,7 +10,7 @@ class ScreenTemplate extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          const CommonAppBar(title: "Obrolan"),
+          CommonAppBar(title: title),
           Expanded(
             child: SingleChildScrollView(
               child: child,
