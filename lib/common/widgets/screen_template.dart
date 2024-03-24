@@ -13,11 +13,7 @@ class ScreenTemplate extends StatelessWidget {
           const CommonAppBar(title: "Obrolan"),
           Expanded(
             child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  child
-                ],
-              ),
+              child: child,
             ),
           ),
         ],
