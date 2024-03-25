@@ -1,7 +1,5 @@
 import "package:flutter/material.dart";
-import "package:flutter_tubes_galon/common/widgets/appbar.dart";
 import "package:flutter_tubes_galon/common/widgets/screen_template.dart";
-import "package:flutter_tubes_galon/utils/constants/colors.dart";
 import "package:flutter_tubes_galon/utils/constants/sizes.dart";
 import "package:iconsax/iconsax.dart";
 
