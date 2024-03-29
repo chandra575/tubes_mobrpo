@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tubes_galon/data/list_galon.dart';
+import 'package:flutter_tubes_galon/features/profile/screens/profile.dart';
 import 'package:flutter_tubes_galon/theme.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -22,10 +24,15 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               Row(
                 children: [
-                  Image.asset(
-                    "assets/img/profile.png",
-                    width: 70,
-                    height: 70,
+                  InkWell(
+                    onTap: () {
+                      Get.to(const ProfileScreen());
+                    },
+                    child: Image.asset(
+                      "assets/img/profile.png",
+                      width: 70,
+                      height: 70,
+                    ),
                   ),
                   const SizedBox(
                     width: 10,
