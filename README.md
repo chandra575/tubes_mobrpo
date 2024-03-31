@@ -1,16 +1,13 @@
-# flutter_tubes_galon
+# Tubes Aplikasi E-lon
+E-lon merupakan aplikasi berabasis mobile yang digunakan untuk melakukan pemesanan galon secara online. Aplikasi ini bertujuan untuk mempermudah proses pembelian galon secara online.
+# Dokumen yang diperlukan
+## SRS
+https://telkomuniversityofficial-my.sharepoint.com/:w:/g/personal/atiohaidar_student_telkomuniversity_ac_id/EXhtTFMZPlJEjvtfgXtBuccBwhzLpmMtN_VO9mSt8meZxA?e=fessUq
 
-A new Flutter project.
+## Canva Presentasi
+https://www.canva.com/design/DAGAgl8YYQ4/ut-HxbG7uWc96j401Z6n9g/edit
 
-## Getting Started
+## Figma
+https://www.figma.com/file/ENoBIEOSAFFRAvZhftaHG2/IMK5?type=design&node-id=0-1&mode=design&t=UsyBpNDUe31cKKuB-0
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
