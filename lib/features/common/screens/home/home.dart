@@ -1,6 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_tubes_galon/data/list_galon.dart';
 import 'package:flutter_tubes_galon/features/profile/screens/profile.dart';
+import 'package:flutter_tubes_galon/features/saldo/screens/saldo.dart';
 import 'package:flutter_tubes_galon/theme.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -95,37 +98,45 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Center(
               child: Row(
                 children: [
-                  Container(
-                      padding: const EdgeInsets.all(15),
-                      decoration: const BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(20))),
-                      child: Row(
-                        children: [
-                          Image.asset(
-                            "assets/img/wallet.png",
-                            width: 35,
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Saldo",
-                                style: GoogleFonts.boogaloo(
-                                    fontSize: 15, fontWeight: FontWeight.w700),
-                              ),
-                              Text(
-                                "Rp. 5.000",
-                                style: GoogleFonts.boogaloo(
-                                    fontSize: 15, fontWeight: FontWeight.w700),
-                              )
-                            ],
-                          )
-                        ],
-                      )),
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(const SaldoScreen());
+                    },
+                    child: Container(
+                        padding: const EdgeInsets.all(15),
+                        decoration: const BoxDecoration(
+                            color: Colors.white,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20))),
+                        child: Row(
+                          children: [
+                            Image.asset(
+                              "assets/img/wallet.png",
+                              width: 35,
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Saldo",
+                                  style: GoogleFonts.boogaloo(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                                Text(
+                                  "Rp. 5.000",
+                                  style: GoogleFonts.boogaloo(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w700),
+                                )
+                              ],
+                            )
+                          ],
+                        )),
+                  ),
                   const SizedBox(
                     width: 10,
                   ),
