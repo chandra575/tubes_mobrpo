@@ -190,7 +190,7 @@ class ProfileScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 21),
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
